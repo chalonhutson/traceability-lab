@@ -19,7 +19,7 @@ let rollbar = new Rollbar({
     captureUnhandledRejections: true
 });
 
-app.use(express.static("client"));
+// app.use(express.static("client"));
 
 
 app.get("/", (req, res) => {
