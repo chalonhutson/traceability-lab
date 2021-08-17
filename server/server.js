@@ -6,6 +6,7 @@ const path = require("path");
 
 const app = express();
 
+
 app.use(express.json());
 // app.use(cors());
 
@@ -37,7 +38,7 @@ app.post("/api/register", ctrl.register)
 
 
 
-app.listen(5000, ()=> {
+app.listen(port, ()=> {
     rollbar.log(`Running on Port ${port}.`);
     console.log(`Running on Port ${port}.`)
 });
