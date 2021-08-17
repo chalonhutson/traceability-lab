@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const Rollbar = require("rollbar");
 
 let usersInfo = [
     {fname: "Bob", lname: "Johnson", username: "Bobby", password: "$2b$10$P7TCvHEWQK5b8z4SXsxUV.bPy7KHc36vmzYHlLogMS1fvB3YQTmMm"},
@@ -75,14 +76,17 @@ module.exports = {
                 if (passCompare(password, usersInfo[i].password)){
                     res.status(200).send(`Successful login. Username: ${username}.`)
                     console.log(`Client successfully logged in. Username: ${username}`)
+                    rollbar.log(`Client successfully logged in. Username: ${username}`)
                     {break;}
                 } else {
                     res.status(403).send("Incorrect password.")
                     console.log(`Client attempted login with wrong password. Username: ${username}.`)
+                    rollbar.log(`Client attempted login with wrong password. Username: ${username}.`)
                     {break;}
                 };
             } else if (i === usersInfo.length-1){
                 console.log(`Client unsuccessfully logged in with username not found. Username: ${username}.`)
+                rollbar.log(`Client unsuccessfully logged in with username not found. Username: ${username}.`)
                 res.status(404).send("User does not exist.");
             }
         }
@@ -98,14 +102,17 @@ module.exports = {
                 usersInfo.push(newUser)
                 res.status(200).send(`New user created. Username: ${username}.`)
                 console.log(`Client registered new user. User: ${newUser.username}`);
+                rollbar.log(`Client registered new user. User: ${newUser.username}`);
             } else {
                 res.status(403).send("Password does not meet requirements.\nMust be at least 6 characters, at least 2 numbers, and at least 2 symbols: !@#$%^&*().")
                 console.log(`Client attempted to register with password that does not meet the requirements. Username: ${username}.`);
+                rollbar.log(`Client attempted to register with password that does not meet the requirements. Username: ${username}.`);
             }
 
         } else {
             res.status(403).send("Username already in use.")
             console.log(`Client attempted to register with username already in use. Username: ${username}.`);
+            rollbar.log(`Client attempted to register with username already in use. Username: ${username}.`);
         }
     }
 
