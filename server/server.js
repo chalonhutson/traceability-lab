@@ -19,7 +19,6 @@ let rollbar = new Rollbar({
     captureUnhandledRejections: true
 });
 
-// app.use(express.static("client"));
 
 
 app.get("/", (req, res) => {
@@ -33,6 +32,7 @@ app.get("/", (req, res) => {
     }
 });
 
+app.use(express.static("client"));
 const port = process.env.PORT || 5050;
 
 // app.get("/api/getPass/:password", ctrl.passEncrypt)
