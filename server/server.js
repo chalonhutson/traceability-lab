@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/api/getPass/:password", ctrl.passEncrypt)
-app.post("/api/login", ctrl.login)
-app.post("/api/register", ctrl.register)
+// app.get("/api/getPass/:password", ctrl.passEncrypt)
+// app.post("/api/login", ctrl.login)
+// app.post("/api/register", ctrl.register)
 
 
 
