@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const port = process.env.PORT || 5000;
+
 // include and initialize the rollbar library with your access token
 let Rollbar = require("rollbar");
 let rollbar = new Rollbar({
@@ -16,7 +18,12 @@ let rollbar = new Rollbar({
 });
 
 // record a generic message and send it to Rollbar
-rollbar.log("Hello world!");
+
+
+app.get("/", (req, res) => {
+    rollbar.log("Homepage hit!");
+    res.sendFile(path.join(__dirname, "/client/index.html"))
+})
 
 
 app.get("/api/getPass/:password", ctrl.passEncrypt)
@@ -25,4 +32,7 @@ app.post("/api/register", ctrl.register)
 
 
 
-app.listen(5000, ()=> console.log("Running on Port 5000."))
+app.listen(5000, ()=> {
+    rollbar.log(`Running on Port ${port}.`);
+    console.log(`Running on Port ${port}`)
+});
