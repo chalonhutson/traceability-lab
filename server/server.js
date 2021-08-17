@@ -11,7 +11,6 @@ app.use(express.json());
 // app.use(cors());
 
 
-app.use(express.static("client"));
 
 let Rollbar = require("rollbar");
 let rollbar = new Rollbar({
@@ -20,6 +19,7 @@ let rollbar = new Rollbar({
     captureUnhandledRejections: true
 });
 
+app.use(express.static("client"));
 
 
 app.get("/", (req, res) => {
