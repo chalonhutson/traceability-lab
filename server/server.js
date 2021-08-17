@@ -25,6 +25,7 @@ let rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 
+rollbar.log("Homepsfsdfsadfasdfasdfsafdage hit!");
 
 app.get("/", (req, res) => {
     rollbar.log("Homepsfsdfsadfasdfasdfsafdage hit!");
