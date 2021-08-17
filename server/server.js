@@ -23,9 +23,11 @@ app.use(express.static("client"));
 
 
 app.get("/", (req, res) => {
-    console.log("testing 232342")
-    rollbar.log("Test 1223123")
-    res.sendFile(path.join(__dirname, "../client/index.html"))
+    try {
+        console.log("testing 232342")
+        rollbar.log("Test 1223123")
+        res.sendFile(path.join(__dirname, "../client/index.html"))
+    } catch(err){console.log(err)}
 });
 
 const port = process.env.PORT || 5050;
