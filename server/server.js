@@ -22,7 +22,7 @@ let rollbar = new Rollbar({
 
 app.get("/", (req, res) => {
     rollbar.log("Homepage hit!");
-    res.sendFile(path.join(__dirname, "/client/index.html"))
+    res.sendFile(path.join(__dirname, "../client/index.html"))
 })
 
 
