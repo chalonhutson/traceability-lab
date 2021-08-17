@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const ctrl = require("./controller.js");
 
 const path = require("path");
@@ -7,12 +7,12 @@ const path = require("path");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 
 const port = process.env.PORT || 5000;
 
 app.use(express.static("client"));
-app.use(express.static("resources"));
+// app.use(express.static("resources"));
 
 // include and initialize the rollbar library with your access token
 let Rollbar = require("rollbar");
@@ -39,5 +39,5 @@ app.post("/api/register", ctrl.register)
 
 app.listen(5000, ()=> {
     rollbar.log(`Running on Port ${port}.`);
-    console.log(`Running on Port ${port}`)
+    console.log(`Running on Port ${port}.`)
 });
