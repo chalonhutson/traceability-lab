@@ -1,5 +1,12 @@
 const bcrypt = require("bcrypt");
-const Rollbar = require("rollbar");
+
+
+let Rollbar = require("rollbar");
+let rollbar = new Rollbar({
+  accessToken: '3d7f98e1119d4e658467f6bd7f7b33d2',
+  captureUncaught: true,
+  captureUnhandledRejections: true
+});
 
 let usersInfo = [
     {fname: "Bob", lname: "Johnson", username: "Bobby", password: "$2b$10$P7TCvHEWQK5b8z4SXsxUV.bPy7KHc36vmzYHlLogMS1fvB3YQTmMm"},
