@@ -2,7 +2,7 @@
   "name": "mon-morn-review",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "server.js",
   "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
