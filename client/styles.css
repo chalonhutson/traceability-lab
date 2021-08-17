@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+    background-color: #8ECAE6;
+    min-width: 750px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #023047;
+    height: 75px;
+    padding: 10px;
+}
+
+h1 {
+    font-family: "quicksand";
+    font-weight: 300;
+}
+
+#left-header {
+    display: flex;
+    align-items: center;
+}
+
+#logo-img {
+    height: 100%;
+}
+
+#right-header {
+    display: flex;
+    align-items: center;
+    color: ivory;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+}
+
+h2 {
+    font-family: "quicksand";
+    color: #023047;
+    margin-top: 5px;
+}
+
+#login-container {
+    background-color: #FFB703;
+    border-radius: 10px;
+    border: 2px solid #FB8500;
+    box-shadow: inset 0 0 5px  black;
+    height: 150px;
+    width: 250px;
+    margin: 0px 25px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#login-user {
+    width: 100%;
+}
+
+#login-pass {
+    width: 100%;
+}
+
+
+
+
+
+#register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* justify-items: center; */
+    align-items: center;
+    background-color: #FFB703;
+    border-radius: 10px;
+    border: 2px solid #FB8500;
+    box-shadow: inset 0 0 5px  black;
+    height: 200px;
+    width: 300px;
+    /* margin: 0px 25px; */
+    /* padding: 5px; */
+}
+
+#reg-stuff-below-headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#reg-names-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 95%;
+}
+
+#reg-fname {
+    width: 48%;
+}
+#reg-lname {
+    width: 48%;
+}
+
+#other-reg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+    width: 95%;
+}
+
+.typos {
+    background-color: white;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+
+.butts {
+    background-color: #023047;
+    color: #FFB703;
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+}

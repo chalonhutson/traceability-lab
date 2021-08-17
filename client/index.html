@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Awesome website!</title>
+</head>
+<body>
+    <header>
+        <div id="left-header">
+            <img src="../resources/mises.png" id="logo-img">
+        </div>
+        <div id="right-header">
+            <h1>Awesome Website!</h1>
+        </div>
+    </header>
+
+    <main>
+        <div id="login-container">
+            <h2>login</h2>
+            <input type="text" placeholder="username" class="typos" id="login-user">
+            <input type="password" placeholder="password" class="typos" id="login-pass">
+            <input type="button" class="butts" id="login-btn" value="login">
+        </div>
+
+        <!-- ====Registration Container=== -->
+        <div id="register-container">
+            <h2>register</h2>
+            <div id="reg-stuff-below-headline">
+                <!-- ===First&Last Names=== -->
+                <div id="reg-names-container">
+                    <input type="text" placeholder="first name" class="typos" id="reg-fname">
+                    <input type="text" placeholder="last name" class="typos" id="reg-lname">
+                </div>
+                <!-- ===Username, Password, & Button -->
+                <div id="other-reg-container">
+                    <input type="text" placeholder="username" class="typos" id="reg-user">
+                    <input type="password" placeholder="password" class="typos" id="reg-pass">
+                    <input type="button" class="butts" id="reg-btn" value="sign up">
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div>
+            <h2 id="notification"></h2>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
